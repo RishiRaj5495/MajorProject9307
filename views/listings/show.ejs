@@ -1,0 +1,28 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+  </head>
+  <body>
+     <h2>Listing Details</h2>
+      <a href="/listings/<%= show._id %>/edit">Edit this Listing</a>
+          <h3><%= show.title %> </h3>
+
+   <ul>
+        <li> 
+          <p><%= show.description %></p>
+          <p>Price:&#8377 <%= show.price.toLocaleString("en-IN")%></p>
+          <p>Location: <%= show.location %></p>
+          <p>Contact: <%= show.country %></p>
+        </li>
+    </ul>
+    <br>
+   
+  
+     
+  
+
+
+  </html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creat new  visiting</title>
+</head>
+<body>
+
+
+   <form action="/listings/accomodation" method="POST">
+
+    <input type="text" name="title" placeholder=" Enter Title" >
+    <hr>
+      <textarea type="text" name="description" placeholder=" Enter Description" ></textarea>
+    <hr>
+    <input type="number" name="price" placeholder=" Enter Price" >
+    <hr>
+    <input type="text" name="location" placeholder=" Enter Location" >
+    <hr>
+    <input type="text" name="country" placeholder=" Enter Contact" >
+    <hr>
+    <button> Add</button>
+
+   </form>
+
+
+   <br><br> <br><br>
+  
+
+<!-- case 2 -->
+   <form action="/listings/accomodation" method="POST">
+
+    <input type="text" name="listing[title]" placeholder=" Enter Title" >
+    <hr>
+      <textarea type="text" name="listing[description]" placeholder=" Enter Description" ></textarea>
+    <hr>
+    <input type="number" name="listing[price]" placeholder=" Enter Price" >
+    <hr>
+    <input type="text" name="listing[location]" placeholder=" Enter Location" >
+    <hr>
+    <input type="text" name="listing[country]" placeholder=" Enter Contact" >
+    <hr>
+    <button> Add</button>
+
+   </form>
+ <!-- finish -->
+
+
+
+
+
+</body>
+</html>

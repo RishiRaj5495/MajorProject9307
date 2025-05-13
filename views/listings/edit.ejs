@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit this </title>
+</head>
+<body>
+  <h2>Edit your Listing</h2>
+   <form  action ="/listings/<%= show._id %?_method=PUT" method="POST">
+
+    <input type="text" name="listing[title]" value="<%= show.title %>" >
+    <hr>
+      <textarea type="text" name="listing[description]" value="<%= show.description %>" ></textarea>
+    <hr>
+    <input type="number" name="listing[price]" value="<%= show.price %>" >
+    <hr>
+    <input type="text" name="listing[location]" value="<%= show.location %>" >
+    <hr>
+    <input type="text" name="listing[country]" value="<%= show.country %>" >
+    <hr>
+    <button> Edit</button>
+
+   </form>
+
+
+</body>
+</html>
