@@ -6,8 +6,12 @@
   app.set("view engine", "ejs");
   app.set("views", path.join(__dirname, "views"));
   app.use(express.urlencoded({ extended: true }));
-  app.use(express.urlencoded({ extended: true }));
+  const methodOverride = require("method-override");
   app.use(methodOverride("_method"));
+  const ejsMate = require("ejs-mate");
+  app.engine("ejs", ejsMate);
+  app.use(express.static(path.join(__dirname, "/public")));
+
 
   // app.use(express.static(path.join(__dirname, "public")));
 app.get("/", (req, res) => {
@@ -56,6 +60,7 @@ async function main(){
 app.get("/listings", async (req, res) => {
   console.log("Fetching listings...");
   const listings = await Listing.find();
+  console.log(listings);
   res.render("listings/showServices.ejs", { listings });
 });
 
@@ -79,7 +84,7 @@ app.post("/listings/accomodation", async (req, res) => {
   // });
     
 
-
+console.log("Go ahead");
 
 
   // await createListing.save();
@@ -87,7 +92,8 @@ app.post("/listings/accomodation", async (req, res) => {
   // res.redirect("/listings");   // finishh the code
 
  
-    let createNewListings = new Listing(req.body.listing); //case2 start
+    let createNewListings = new Listing(req.body.listing);
+    console.log(createNewListings) ;//case2 start
   await createNewListings.save();
   console.log("Listing created successfully");
   res.redirect("/listings");  //finish the code
@@ -97,9 +103,11 @@ app.post("/listings/accomodation", async (req, res) => {
 
 
 app.get("/listings/:id", async (req, res) => {
+  console.log("Fetching listing by ID...");
 let id = req.params.id;
 
 let show = await Listing.findById(id);
+console.log(show);
 res.render("listings/show.ejs", { show });
 
 });
@@ -110,6 +118,21 @@ res.render("listings/show.ejs", { show });
 app.get("/listings/:id/edit", async (req, res) => {
 
   let id = req.params.id;
-  let showObject = await Listing.findById(id);
-  res.render("listings/edit.ejs", { showObject });
+  let show = await Listing.findById(id);
+  res.render("listings/edit.ejs", { show });
 });
+
+
+app.put("/listings/:id", async (req, res) => {
+  let id = req.params.id;
+  let showObject = await Listing.findByIdAndUpdate(id, req.body.listing, { new: true });
+  res.redirect("/listings/"+ id);
+});
+
+
+app.delete("/listings/:id", async (req, res) => {
+  let id = req.params.id;
+  await Listing.findByIdAndDelete(id);
+  res.redirect("/listings");
+});
+

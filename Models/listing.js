@@ -15,14 +15,19 @@
       type: String,
     },
     images: {
-      default: "https://thehamiltoncollection.com/cdn/shop/articles/ev-22_1.jpg?v=1738216710&width=1100",
-      type: String,
+       type: String,
+
+         default: "https://thehamiltoncollection.com/cdn/shop/articles/ev-22_1.jpg?v=1738216710&width=1100",
+     
       set : (v) => v === "" ? "https://thehamiltoncollection.com/cdn/shop/articles/ev-22_1.jpg?v=1738216710&width=1100" : v,
 
     },
     country :{
 
       type: String,
+
+    
+
     },
    
     });

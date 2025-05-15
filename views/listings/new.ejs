@@ -1,53 +1,56 @@
-<!DOCTYPE html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Creat new  visiting</title>
-</head>
+ <% layout("/layouts/boilerPlate") %>
 <body>
 
+  <div class="row">
+    <div class="col-8 offset-2">
+<h3>Create New Listing</h3>
 
    <form action="/listings/accomodation" method="POST">
 
-    <input type="text" name="title" placeholder=" Enter Title" >
-    <hr>
-      <textarea type="text" name="description" placeholder=" Enter Description" ></textarea>
-    <hr>
-    <input type="number" name="price" placeholder=" Enter Price" >
-    <hr>
-    <input type="text" name="location" placeholder=" Enter Location" >
-    <hr>
-    <input type="text" name="country" placeholder=" Enter Contact" >
-    <hr>
-    <button> Add</button>
+   <div class="mb-3">
+    <label for="title" class="form-label">Title :</label>
+    <input type="text" name="listing[title]" placeholder=" Enter Title" class="form-control" >
+    </div>
+    
+    <div class="mb-3">
+      <label for="description" class="form-label">Description :</label>
+      <textarea type="text" name="listing[description]" placeholder=" Enter Description" class="form-control"></textarea>
+    </div>
+    
+    <div class="col-4.5">
+    <label for="location" class="form-label">Location :</label>
+    <input type="text" name="listing[location]" placeholder=" Enter Location" class="form-control">
+    </div>
+    <div class="row">
+
+
+    <div class="col-5">
+    <label for="country" class="form-label">Country :</label>
+    <input type="text" name="listing[country]" placeholder=" Enter Country" class="form-control">
+    </div>
+
+
+    <div class="col-5">
+  
+    <label for="price" class="form-label">Price :</label>
+    <input type="number" name="listing[price]" placeholder=" Enter Price" class="form-control">
+    </div>
+  
+    </div>
+    <br>
+    <button  class="btn btn-danger px-4 p-1"> Add</button>
 
    </form>
+   </div>
+  </div>
 
-
-   <br><br> <br><br>
+ 
   
 
-<!-- case 2 -->
-   <form action="/listings/accomodation" method="POST">
 
-    <input type="text" name="listing[title]" placeholder=" Enter Title" >
-    <hr>
-      <textarea type="text" name="listing[description]" placeholder=" Enter Description" ></textarea>
-    <hr>
-    <input type="number" name="listing[price]" placeholder=" Enter Price" >
-    <hr>
-    <input type="text" name="listing[location]" placeholder=" Enter Location" >
-    <hr>
-    <input type="text" name="listing[country]" placeholder=" Enter Contact" >
-    <hr>
-    <button> Add</button>
-
-   </form>
- <!-- finish -->
 
 
 
 
 
 </body>
-</html>

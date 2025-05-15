@@ -1,30 +1,32 @@
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Services</title>
+ <% layout("/layouts/boilerPlate") %>
 
-  </head>
+ 
   <body>
     <h2>All Listings</h2>
    <form action="/listings/new" method="GET">
       <button type="submit">Create New Listing</button>
    </form>
 
-<ul>
- <%   for(listing of listings) {  %>
-    <li>
-      <a href="/listings/<%= listing._id %>"> <h3><%= listing.title %></h3></a>
-      <!-- <p><%= listing.description %></p>
-      <p>Price: $<%= listing.price %></p>
-      <p>Location: <%= listing.location %></p>
-      <p>Contact: <%= listing.contact %></p>
-    </li> -->
- <%  } %>
- 
+ <div style=" display: flex;  flex-wrap: wrap;" >
 
-</ul>
 
+
+     <%   for(listing of listings) {  %>
+
+      <a class="row" href=" /listings/<%= listing._id%>">
+   <div class="card" style="width: 15rem;">
+  <img src="<%= listing.images %>" class="card-img-top" alt="listing_image" style="height: 15rem;"> 
+  
+  <div class="card-body">
+    <p class="card-text">
+    <h5><%= listing.title %></h5>
+      <p>Price: &#8377 <%= listing.price.toLocaleString("en-IN")%> /night</p>
+    
+    </p>
+  </div>
+</div>
+ <% } %>
+</a>
+ </div>
   </body>
-  </html>
+ 
