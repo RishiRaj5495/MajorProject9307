@@ -204,6 +204,9 @@ async function main(){
 
 
 
+app.get("/", (req, res) => {
+  res.redirect("/listings"); // ✅ sends users to /listings
+});
 
 
 
