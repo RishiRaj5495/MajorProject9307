@@ -5,25 +5,35 @@
     
     <div class="col-8 offset-2">
   <h2>Edit your Listing</h2>
-   <form  action ="/listings/<%= show._id %>?_method=PUT" method="POST">
+   <form  action ="/listings/<%= show._id %>?_method=PUT" method="POST" novalidate class="needs-validation" enctype="multipart/form-data">
 
     <div class="mb-3">
     <label for="title" class="form-label">Title :</label>
-    <input type="text" name="listing[title]" value="<%= show.title %>" class="form-control" >
+    <input type="text" name="listing[title]" value="<%= show.title %>" class="form-control" required>
     </div>
     <div class="mb-3">
     <label for="description" class="form-label">Description :</label>
-      <textarea type="text" name="listing[description]" class="form-control"><%= show.description %></textarea>
+      <textarea type="text" name="listing[description]" class="form-control" required><%= show.description %></textarea>
     </div>
 
-   <div class="mb-3">
+   <!-- <div class="mb-3">
     <label for="images" class="form-label">Images :</label>
-    <input type="text" name="listing[images]" value="<%= show.images %>" class="form-control">
+    <input type="text" name="listing[images]" value="<%= show.images.url %>" class="form-control" required>
 
 
-   </div> 
+   </div>  -->
+
+   <div class="mb-3">
+    Original Image: <br>
+    <img src="<%= originalImage %>">
+
+
+   </div>
    
-
+ <div class="mb-3">
+    <label for="images" class="form-label">Upload Image :</label>
+    <input type="file" name="listing[images]" class="form-control" id="images"/>
+    </div>
 
 
 
@@ -38,12 +48,12 @@
   <div class="row">
     <div class="mb-3 col-4">  
     <label for="price" class="form-label">Price :</label>
-    <input type="number" name="listing[price]" value="<%= show.price %>"  class="form-control">
+    <input type="number" name="listing[price]" value="<%= show.price %>"  class="form-control" required>
     </div>
   
     <div class="mb-3 col-8">
     <label for="country" class="form-label">Country :</label>
-    <input type="text" name="listing[country]" value="<%= show.country %> "  class="form-control">
+    <input type="text" name="listing[country]" value="<%= show.country %> "  class="form-control" required>
     </div>
 
 
@@ -57,4 +67,7 @@
     </form>
     </div>
     </div>
+
+
+    <!-- <script src="/js/script.js"></script>   already in boilerplate -->
 </body>

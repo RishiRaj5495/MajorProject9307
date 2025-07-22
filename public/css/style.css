@@ -58,7 +58,7 @@ align-items: space-evenly;
 background-color: rgba(241, 240, 238, 0.795);
 
 }
-.card{
+.listing-card{
   border: none !important;
 
 }
@@ -87,5 +87,10 @@ opacity: 0.2 !important;
 background-color: white !important;
 
  
+}
+#map{
+
+  height:400px;
+  width: 80vh;
 }
 

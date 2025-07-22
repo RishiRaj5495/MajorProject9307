@@ -5,35 +5,73 @@
     <div class="col-8 offset-2">
 <h3>Create New Listing</h3>
 
-   <form action="/listings/accomodation" method="POST">
+   <form action="/listings/accomodation" method="POST"  novalidate  class="needs-validation" enctype="multipart/form-data">
 
    <div class="mb-3">
     <label for="title" class="form-label">Title :</label>
-    <input type="text" name="listing[title]" placeholder=" Enter Title" class="form-control" >
+    <input type="text" name="listing[title]" placeholder=" Enter Title" class="form-control" required>
+
+    <div class="valid-feedback">Looks good!</div>
+    <div class="invalid-feedback">Please enter valid title</div>
     </div>
+
+    
+   <!-- <div class="mb-3">
+    <label for="images" class="form-label">Image Link:</label>
+    <input type="text" name="listing[images]" placeholder="Enter image URL/Link " class="form-control" required>
+
+    </div> -->
+    <div class="mb-3">
+    <label for="images" class="form-label">Upload Image :</label>
+    <input type="file" name="listing[images]" class="form-control" id="images"/>
+    </div>
+
+
+    
     
     <div class="mb-3">
       <label for="description" class="form-label">Description :</label>
-      <textarea type="text" name="listing[description]" placeholder=" Enter Description" class="form-control"></textarea>
+      <textarea type="text" name="listing[description]" placeholder=" Enter Description" class="form-control" required></textarea>
     </div>
+
+
+     
+
+
+      
+
+
+
+
     
     <div class="col-4.5">
     <label for="location" class="form-label">Location :</label>
-    <input type="text" name="listing[location]" placeholder=" Enter Location" class="form-control">
+    <input type="text" name="listing[location]" placeholder=" Enter Location" class="form-control"  required>
+
     </div>
+
+
+
+
+
+
+    
     <div class="row">
-
-
     <div class="col-5">
     <label for="country" class="form-label">Country :</label>
-    <input type="text" name="listing[country]" placeholder=" Enter Country" class="form-control">
+    <input type="text" name="listing[country]" placeholder=" Enter Country" class="form-control" required>
     </div>
+
+
+     
+
+
 
 
     <div class="col-5">
   
     <label for="price" class="form-label">Price :</label>
-    <input type="number" name="listing[price]" placeholder=" Enter Price" class="form-control">
+    <input  name="listing[price]" placeholder=" Enter Price" class="form-control"  required>
     </div>
   
     </div>

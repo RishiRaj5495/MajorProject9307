@@ -1,10 +1,127 @@
  <% layout("/layouts/boilerPlate") %>
+<%= success %>
+   
+<style>
+
+ #filters{
+
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+
+
+ }
+.filter {
+/* 
+
+
+  align-items: center; */
+  text-align: center;
+  /* margin-right: 20px; */
+  padding: 10px;
+  /* background-color: #f0f0f0; */
+  border-radius: 5px;
+  opacity: 0.7;
+  cursor: pointer;
+
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+}
+.filter:hover {
+  opacity: 1;
+}
+
+.toggle{
+
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.274);
+  padding: 8px;
+  border-radius: 7px ;
+
+}
 
  
+
+</style>
   <body>
-    <h2>All Listings</h2>
+
+
+
+    <div id="filters">
+      <div class="filter">
+        <div><i class="fa-solid fa-fire"></i></div>
+        Trending
+      </div>
+      <div class="filter">
+       <div><i class="fa-solid fa-bed"></i></div>
+        Room
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-mountain-city"></i></div>
+      Iconic cities
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-mountain"></i></div>
+        Mountain
+      </div>
+
+            <div class="filter">
+        <div><i class="fa-solid fa-person-swimming"></i></div>
+      Amaing Pools
+        
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-cow"></i></div>
+      Farms
+        
+      </div>
+            <div class="filter">
+        <div><i class="fa-solid fa-campground"></i></div>
+        Compain
+        
+      </div>
+            <div class="filter">
+        <div><i class="fa-brands fa-fort-awesome"></i></div>
+        Home Castle
+        
+      </div>
+
+              <div class="filter">
+        <div><i class="fa-solid fa-snowflake"></i></div>
+      Snow
+      </div>
+ 
+ <div class="filter">
+        <div><i class="fa-solid fa-igloo"></i></div>
+    Igloo
+      </div>
+ 
+
+ <div class="filter">
+        <div><i class="fa-solid fa-utensils"></i></div>
+    Food
+      </div>
+    <div class="toggle">
+
+      <div class="form-check form-switch form-check-reverse">
+  <input class="form-check-input" type="checkbox" id="switchCheckReverse">
+  <label class="form-check-label" for="switchCheckReverse">Display tax</label>
+</div>
+    </div>
+
+    
+</div>
+
+      
+  
+    <!-- <h2>All Listings</h2> -->
+
+    
    <form action="/listings/new" method="GET">
-      <button type="submit">Create New Listing</button>
+      <!-- <button type="submit">Create New Listing</button> -->
    </form>
 
  <div style=" display: flex;  flex-wrap: wrap;" >
@@ -13,20 +130,54 @@
 
      <%   for(listing of listings) {  %>
 
-      <a class="row" href=" /listings/<%= listing._id%>">
-   <div class="card" style="width: 15rem;">
-  <img src="<%= listing.images %>" class="card-img-top" alt="listing_image" style="height: 15rem;"> 
+      <a class="row" href="/listings/<%= listing._id%>">
+   <div class="card listing-card" style="width: 15rem;">
+  <img src="<%= listing.images.url %>" class="card-img-top" alt="listing_image" style="height: 15rem;"> 
   
   <div class="card-body">
     <p class="card-text">
     <h5><%= listing.title %></h5>
-      <p>Price: &#8377 <%= listing.price.toLocaleString("en-IN")%> /night</p>
+      <p>Price: &#8377 <%= listing.price.toLocaleString("en-IN")%> /night
+      <!-- The value of taxValue is only available on the client-side (in the browser's JavaScript). 
+      You cannot directly access it in EJS, which is rendered on the server-side before the page is sent to the browser.
+      If you want to show/hide content based on the switch, you need to use JavaScript to manipulate the DOM after the page loads. 
+      For example: -->
+
+      <i class="tax-info" style="display:none;"> &nbsp; &nbsp; +18% GST</i>
+     
+    
+    
+    </p>
+
     
     </p>
   </div>
 </div>
- <% } %>
 </a>
+ <% } %>
+
  </div>
-  </body>
+ <script>
+let taxSwitch = document.getElementById("switchCheckReverse");
+taxSwitch.addEventListener("click", () => {
+      let taxInfo = document.getElementsByClassName("tax-info");
+
+console.log(taxInfo);
+      // Loop through all elements with the class "tax-info"
+      // and toggle their display based on the switch state
+      for(let info of taxInfo){
+        if (taxSwitch.checked) {
+          info.style.display = "inline";
+        } else {
+          info.style.display = "none";
+        }
+      }
+  
+});
+     
+      
+     
+      </script>
+  
+</body>
  

@@ -1,6 +1,7 @@
   const mongoose = require('mongoose');
   const insData = require('./init/data.js');
   const Listing = require('./Models/listing.js');
+const { listingSchema } = require('./schima.js');
 
   main()
 .then(() => {
@@ -19,9 +20,17 @@ const initializeData = async () => {
  
     await Listing.deleteMany({}); // Clear existing data
     console.log("Existing data cleared");
+     insData.data = insData.data.map((obj) => (
+      {
 
-   await Listing.insertMany(insData.data);
-    console.log("Data inserted successfully:");
+    ...obj, // Spread operator to copy properties from obj
+ owner : "683f1ac2a4d20ece4f1e2edf",
+
+      }
+    ));
+
+  let list =  await Listing.insertMany(insData.data);   
+    console.log(list);
    
 
 };
