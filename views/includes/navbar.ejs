@@ -4,7 +4,15 @@
 .btn-search{
 border-radius: 10px;
 font-size: 0.5rem;
+}
 
+@media (max-width: 414px) {
+  #addlisting {
+    position: absolute;
+    color: aqua;
+    top: 27px;
+    left: 129px;
+  }
 }
 
 </style>
@@ -56,7 +64,7 @@ font-size: 0.5rem;
 
 
 <div class="navbar-nav ms-auto">
-  <a class="nav-link" href= "/listings/new">Add new Listings</a>
+  <a class="nav-link listing" id="addlisting" href= "/listings/new">Add new Listings</a>
 
      <% if(!currentUser) { %>
         <a class="nav-link active" href="/users/signup"><b>Sign up</b></a>
