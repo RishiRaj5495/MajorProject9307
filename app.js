@@ -35,8 +35,8 @@ const LocalStrategy = require("passport-local");
   },
   touchAfter: 24 * 3600 , // 1 day in seconds
    })
-store.on("error", () => {
-Console.log("error in session store",err);
+store.on("error", (err) => {
+console.log("error in session store",err);
 
 })
 
@@ -44,7 +44,7 @@ Console.log("error in session store",err);
 const sessionOptions = {
   store,
 secret : process.env.SECRET,
-  resave : false,
+  resave : false,         
   saveUninitialized : true ,
   cookie: {
     expires: Date.now() + 7 * 24 * 60 * 60 * 1000, // 1 day
@@ -83,11 +83,11 @@ res.locals.success = req.flash("success");
 res.locals.error = req.flash("error");
 res.locals.currentUser = req.user; // Set the current user in locals for use in views
 next();
-});
+});      
 
 
 
- 
+   
 
 
 //   app.all("*", (req, res, next) => {
@@ -103,7 +103,7 @@ next();
 
 
  const listingsRouter = require("./routes/listings.js");
- app.use("/listings", listingsRouter);
+ app.use("/listings", listingsRouter); //all request start with "/listings" will be handled by listingsRouter
 const reviewsRouter = require("./routes/reviews.js");
 
 app.use("/listings/:id/reviews", reviewsRouter);

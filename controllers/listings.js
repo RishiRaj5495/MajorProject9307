@@ -22,7 +22,7 @@ module.exports.showRoute = async (req, res) => {
 let id = req.params.id;
 
 let show = await Listing.findById(id).populate({path:"reviews",populate:{path:"author"}}) //populate reviews and author of reviews
-.populate("owner");//it show the hole content of reviews ,not show only the id of reviews like[id:8u87878787uyuyi]
+.populate("owner");//it show the hole content of reviews ,not show only the id of reviews like[id:8u87878787uyuyi] or populate tb krte hai jb ref use krte hai jaise listing.reveiw
 if(!show){
   req.flash("error","Listing not found");
   return res.redirect("/listings");
@@ -55,7 +55,7 @@ res.render("listings/show.ejs", { show });
 
 module.exports.createNewListing = async (req, res, next) => { 
   let url = req.file.path;
-  let filename = req.file.filename;
+  let filename = req.file.filename;  
 
   let response = await geocodingClient
  // Use the geocoding client to forward geocode the location
