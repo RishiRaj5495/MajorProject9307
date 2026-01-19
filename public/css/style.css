@@ -103,3 +103,58 @@ background-color: white !important;
   width: 80vh;
 }
 
+/* /////////// */
+
+.review-flex-container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Both sections */
+.review-rating-box, .review-comment-box {
+  flex: 1;
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+}
+
+/* Star styling */
+.custom-stars {
+  display: flex;
+  gap: 6px;
+}
+
+.custom-stars label {
+  font-size: 1.2rem;
+  color: #adb5bd;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.custom-stars input:checked + label,
+.custom-stars label:hover {
+  color: #ffc107;
+  transform: scale(1.2);
+}
+
+.custom-textarea {
+  border-radius: 10px;
+  resize: none;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .review-flex-container {
+    flex-direction: column;
+  }
+}
+

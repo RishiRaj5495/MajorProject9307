@@ -124,14 +124,14 @@ align-items: center;
       <!-- <button type="submit">Create New Listing</button> -->
    </form>
 
- <div style=" display: flex;  flex-wrap: wrap;" >
+ <div style=" display: flex;  flex-wrap: wrap; justify-content: center;" >
 
 
 
      <%   for(listing of listings) {  %>
 
       <a class="row" href="/listings/<%= listing._id%>">
-   <div class="card listing-card" style="width: 15rem;">
+   <div class="card listing-card" style="width: 25rem; padding: 5px; margin: auto 1rem auto 1rem ;">
   <img src="<%= listing.images.url %>" class="card-img-top" alt="listing_image" style="height: 15rem;"> 
   
   <div class="card-body">
