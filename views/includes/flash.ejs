@@ -2,18 +2,20 @@
   <div class="row justify-content-center">
 
     <% if (success && success.length) { %>
-      <div class="alert alert-success alert-dismissible fade show 
-                  col-12 col-sm-10 col-md-8 col-lg-6" role="alert">
-        <%= success %>
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+        <div class="alert alert-success alert-dismissible fade show text-center shadow-sm" role="alert">
+          <%= success %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
       </div>
     <% } %>
 
     <% if (error && error.length) { %>
-      <div class="alert alert-danger alert-dismissible fade show 
-                  col-12 col-sm-10 col-md-8 col-lg-6" role="alert">
-        <%= error %>
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+        <div class="alert alert-danger alert-dismissible fade show text-center shadow-sm" role="alert">
+          <%= error %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
       </div>
     <% } %>
 
