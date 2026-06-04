@@ -7,8 +7,6 @@ An Airbnb-inspired full-stack rental platform — browse properties, host your o
 [![Mapbox](https://img.shields.io/badge/Mapbox-GL-000000?logo=mapbox&logoColor=white)](https://www.mapbox.com/)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
 
-> 🔗 [Live Demo](https://github.com/RishiRaj5495/MajorProject9307)
-
 ---
 
 ## Tech Stack
