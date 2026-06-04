@@ -1,4 +1,4 @@
-# StayFinder -- Airbnb-Inspired Full Stack Rental Platform 🏠
+# StayFinder - Airbnb-Inspired Full Stack Rental Platform 🏠
 
 An Airbnb-inspired full-stack rental platform — browse properties, host your own, and explore locations on an interactive map.
 
