@@ -7,9 +7,7 @@ An Airbnb-inspired full-stack rental platform — browse properties, host your o
 [![Mapbox](https://img.shields.io/badge/Mapbox-GL-000000?logo=mapbox&logoColor=white)](https://www.mapbox.com/)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
 
-> 🔗 [Live Demo](https://your-live-link.com)
-
-![StayFinder Preview](public/images/preview.png)
+> 🔗 [Live Demo](https://github.com/RishiRaj5495/MajorProject9307)
 
 ---
 
@@ -36,7 +34,7 @@ git clone https://github.com/yourusername/stayfinder.git
 cd stayfinder
 npm install
 cp .env.example .env        # add your keys (see below)
-node seeds/index.js          # optional — loads sample listings
+node app.js          # optional — loads sample listings
 npm start                    # http://localhost:3000
 ```
 
@@ -75,9 +73,7 @@ MAPBOX_TOKEN=...
 - Piped file uploads through Multer directly to Cloudinary — no files ever written to the server disk
 - Designed normalized Mongoose schemas with `populate()` to link listings, reviews, and users cleanly
 
----
 
-## License
 
-MIT © [Your Name](https://github.com/yourusername)
+
 
